@@ -45,6 +45,11 @@ public class Three{
         System.out.print("Enter size of array: ");
         int size = sc.nextInt();
 
+        if(size < 0){
+            System.out.println("Size of array cannot be negative.");
+            return;
+        }
+
         int[] arr = new int[size];
         System.out.println("Enter "+size+" integers space separated: ");
         for(int i=0; i<size; i++){
