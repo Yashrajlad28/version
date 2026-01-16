@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Three{
 
@@ -39,9 +40,21 @@ public class Three{
     }
 
     public static void main(String[] args){
-        int[] arr = {-1,0,1,2,-1,-4};
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size of array: ");
+        int size = sc.nextInt();
+
+        int[] arr = new int[size];
+        System.out.println("Enter "+size+" integers space separated: ");
+        for(int i=0; i<size; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        // int[] arr = {-1,0,1,2,-1,-4};
         var obj = new Three();
         List<List<Integer>> triplets = obj.threeSum(arr);
+        System.out.println("The triplets are: ");
         obj.showTriplets(triplets);
     }
 }
